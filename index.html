@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>PancakeRobot </title>
+    <link rel='icon' href='favicon.ico' type='image/x-icon' />
+    <!--p5 libraries folder must be up one level from this html file-->
+    <!-- <script type="text/javascript" src="../libraries/p5.js"></script> -->
+
+
+    <!-- add jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/client.js"></script>
+    <!--  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.js"></script> -->
+
+    <script type="text/javascript" src="https://cdnjs.cloudkflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
+
+    <!--our own script should be in same folder as the html-->
+
+    <script type="text/javascript" src="sketch.js"></script>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+    <input type="file" id="imageforpancake" name="pCake" accept="image/png, image/jpeg, image/svg" onchange="readURL(this);" />
+    <br>
+    <img id="myImage" src="#" style="border:1px" />
+
+    <!--Add HTML content if you wish. It will appear above your sketch-->
+</body>
+
+</html>
