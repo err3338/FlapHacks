@@ -15,17 +15,19 @@ function readURL(input){
         reader.readAsDataURL(input.files[0]);
             
         }
+    
     }
 
 function selectImage(){
     
 }
-function setup(){
-    
+function myFunction() {
+  document.getElementById("sub").innerHTML = "YOU CLICKED ME!";
 }
+
 function draw(){
    // image(document.getElementById("imageforpancake"), 0,0);
     //  img = loadImage(document.getElementById("myImage").innerHTML); // Load the image
 
-     image(img, 0,0);
+    // image(img, 0,0);
 }
