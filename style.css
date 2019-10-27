@@ -1,3 +1,8 @@
 body{
     
 }
+
+.Container{
+    display: flex;
+    
+}
