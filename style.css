@@ -30,6 +30,7 @@ input{
     margin: auto;
     
 }
+
 .Container img{
     display: block;
     align-items: center;
@@ -42,5 +43,4 @@ input{
       border-image-source: linear-gradient(rgba(70, 100, 102, 0.5), rgba(128, 120, 120, 0.5));
   border-width: 5pt;
   border-image-slice: 1;
-    
-}
+
