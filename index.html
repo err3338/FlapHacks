@@ -10,7 +10,7 @@
     <!-- <script type="text/javascript" src="../libraries/p5.js"></script> -->
 
 
-    <!-- add jquery-->
+    <link rel="stylesheet" type="text/css" href= "style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://apis.google.com/js/client.js"></script>
     <!--  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.js"></script> -->
@@ -23,23 +23,19 @@
 
     <script type="text/javascript" src="sketch.js"></script>
 
-    <style>
-        body {
-            padding: 0;
-            margin: 0;
-        }
-
-    </style>
 </head>
 
 <body>
+    <div class="Container">
+   <!-- <img src="Media/mickey.jpg" alt="Issa Mickey Pancake"/> -->
     <input type="file" id="imageforpancake" name="pCake" accept="image/png" onchange="readURL(this);" />
     <br>
     <img id="myImage" src="#" style="border:1px" />
 
     
    <input type="submit" id = "sub" onclick="myFunction()" />
-    <!--Add HTML content if you wish. It will appear above your sketch-->
+  
+    </div>
 </body>
 
 </html>
