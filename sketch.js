@@ -14,9 +14,14 @@ function readURL(input) {
             $('#myImage').attr('src', e.target.result)
                 .width(150).height(200)
         };
+        document.body.style.backgroundImage = "url$('#myImage')";
         reader.readAsDataURL(input.files[0]);
+        let str = input.files[0].name;
+        str = str.substring(0,str.length - 4);
+        input.files[0].name = str;
         handleFiles(input.files[0], input.files[0].name);
-        var xhr = new XMLHttpRequest();
+        console.log(str);
+      /*  var xhr = new XMLHttpRequest();
         xhr.open("POST", '/server', true);
 
         //Send the proper header information along with the request
@@ -26,11 +31,25 @@ function readURL(input) {
             if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
                 // Request finished. Do processing here.
             }
-        }
+        }*/
+         var xhr = new XMLHttpRequest();
+        xhr.open("POST", '/server', true);
+
+        //Send the proper header information along with the request
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        xhr.onreadystatechange = function () { // Call a function when the state changes.
+            if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                 
         var t = JSON.parse('{"name": "", "data": ""}');
 
         xhr.send(t.name);
         xhr.send(t.data);
+            }
+        }
+        
+        
+       
      //   xhr.send(timestamp);
         // xhr.send(new Int8Array()); 
         // xhr.send(document);

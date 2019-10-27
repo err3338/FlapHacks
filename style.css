@@ -1,9 +1,9 @@
 body{
-     background-image: url("Media/mickey.jpg");
     background-repeat: no-repeat;
 }
 
 body img{
+    align-content: stretch;
     display: block;
     align-items: center;
     margin: auto;
@@ -11,7 +11,9 @@ body img{
 input{
     color: darkmagenta;
     
+    
 }
+
 .Container{
 
     display: flex;
