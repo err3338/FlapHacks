@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>adf</title>
+    <!-- Polymer Polyfill Libraries -->
+<script src="http://api.jscut.org/bower_components/platform/platform.js"></script>
+
+<!-- Polymer Components -->
+<link rel="import" href="http://api.jscut.org/bower_components/paper-slider/paper-slider.html">
+
+<!-- jscut Components -->
+<link rel="import" href="http://api.jscut.org/api/jscut-app-layout.html">
+<link rel="import" href="http://api.jscut.org/api/jscut-cam.html">
+<link rel="import" href="http://api.jscut.org/api/jscut-simulate-gcode.html">
+<link rel="import" href="http://api.jscut.org/api/jscut-stretch-svg.html">
+<link rel="import" href="http://api.jscut.org/api/jscut-svg.html">
+<link rel="import" href="http://api.jscut.org/api/jscut-tabbed-pages.html">
+<link rel="import" href="http://api.jscut.org/api/jscut-tool-form.html">
+<link rel="import" href="http://api.jscut.org/api/jscut-material-form.html">
+    <script type="text/javascript" src="sketch.js"></script>
+
+    </head>
+    <body>
+        
+<polymer-element name="main-page">
+    <template>
+        <jscut-app-layout>
+            <jscut-form caption="Box" class="left">
+                <jscut-unit-converter units="{{units}}" value0="{{boxWidth}}" value1="{{boxHeight}}"></jscut-unit-converter>
+                <jscut-field-control><button on-click="{{generate}}">generate</button></jscut-field-control>
+                <jscut-field-units label="Units" value="{{units}}"></jscut-field-units>
+                <jscut-field-input label="Box Width" type="number" width="80px" step="any" value="{{boxWidth}}"></jscut-field-input>
+                <jscut-field-input label="Box Height" type="number" width="80px" step="any" value="{{boxHeight}}"></jscut-field-input>
+            </jscut-form>
+
+            <jscut-form caption="Hardware" class="left">
+                <jscut-unit-converter units="{{units}}" value0="{{screwDiameter}}" value1="{{nutWidth}}" value2="{{nutThickness}}"></jscut-unit-converter>
+                <jscut-field-input label="Screw Diameter" type="number" width="80px" step="any" value="{{screwDiameter}}"></jscut-field-input>
+                <jscut-field-input label="Nut Width" type="number" width="80px" step="any" value="{{nutWidth}}"></jscut-field-input>
+                <jscut-field-input label="Nut Thickness" type="number" width="80px" step="any" value="{{nutThickness}}"></jscut-field-input>
+            </jscut-form>
+
+            <jscut-form caption="Joints" class="left">
+                <jscut-unit-converter units="{{units}}" value0="{{jointSize}}" value1="{{jointDistFromEdge}}" value2="{{nutSpacing}}"></jscut-unit-converter>
+                <jscut-field-input label="Size" type="number" width="80px" step="any" value="{{jointSize}}"></jscut-field-input>
+                <jscut-field-input label="Distance from Edge" type="number" width="80px" step="any" value="{{jointDistFromEdge}}"></jscut-field-input>
+                <jscut-field-input label="Nut Spacing" type="number" width="80px" step="any" value="{{nutSpacing}}"></jscut-field-input>
+            </jscut-form>
+
+            <jscut-material-form class="left" material="{{material}}"></jscut-material-form>
+
+            <jscut-tool-form class="left" tool="{{tool}}"></jscut-tool-form>
+
+            <jscut-tabbed-pages class="center">
+                <jscut-tab>Design</jscut-tab>
+                <jscut-page>
+                    <jscut-stretch-svg class="center">
+                        <svg id="svg" viewBox="0 0 100 100">
+                            <rect x="0" y="0" width="100" height="100"></rect>
+                            <rect fill="purple" x="10" y="10" width="80" height="80"></rect>
+                        </svg>
+                    </jscut-stretch-svg>
+                </jscut-page>
+
+                <jscut-tab>Simulate</jscut-tab>
+                <jscut-page>
+                    <jscut-simulate-gcode gcode="{{gcode}}" cutterdiameter="{{simulateCutterDiameter}}" cutterheight="{{simulateCutterHeight}}" time1="{{time1}}" time2="{{time2}}" maxtimerounded="{{maxTime}}" elementsurl="http://api.jscut.org/elements"></jscut-simulate-gcode>
+                    <br><paper-slider pin editable value="{{time1}}" immediatevalue="{{time2}}" max="{{maxTime}}" step="0.1" id="paper_slider"></paper-slider>
+                </jscut-page>
+
+                <jscut-tab>Gcode</jscut-tab>
+                <jscut-page>
+                    <textarea style="width:99%;" rows="30" value="{{gcode}}"></textarea>
+                </jscut-page>
+            </jscut-tabbed-pages>
+        </jscut-app-layout>
+    </template>
+</polymer-element>
+
+<main-page></main-page>
+
+        
+        
+    </body>
+</html>

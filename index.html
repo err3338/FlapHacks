@@ -9,7 +9,7 @@
     <!--p5 libraries folder must be up one level from this html file-->
     <!-- <script type="text/javascript" src="../libraries/p5.js"></script> -->
 
-
+   <!-- <script type = "text/javascript" src="objectToGcode.js"></script> -->
     <link rel="stylesheet" type="text/css" href= "style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://apis.google.com/js/client.js"></script>
@@ -26,15 +26,15 @@
 </head>
 
 <body>
-        <img id="myImage" src="#" style="border:1px" />
+    
+    
     <div class="Container">
-   <!-- <img src="Media/mickey.jpg" alt="Issa Mickey Pancake"/> -->
-    <input type="file" id="imageforpancake" name="pCake" accept="image/png" onchange="readURL(this);" />
+    <input type="file" id="imageforpancake" name="pCake" accept="image/png" class = "inpfile" onchange="readURL(this);" />
     <br>
-   <!-- <img id="myImage" src="#" style="border:1px" /> -->
+        <img id="myImage" src="#" style="border:1px"/>
 
     
-   <input type="submit" id = "sub" onclick="myFunction()" />
+   <input type="submit" id ="sub" onclick="download()" />
   
     </div>
 </body>

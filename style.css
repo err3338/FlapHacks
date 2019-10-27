@@ -1,5 +1,6 @@
 body{
     background-repeat: no-repeat;
+    background: url(Media/mickeypan.jpg);
 }
 
 body img{
@@ -8,23 +9,29 @@ body img{
     align-items: center;
     margin: auto;
 }
-input{
-    color: darkmagenta;
-    
+
+.inpfile{
+  align-content: stretch;
     
 }
-
 .Container{
 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+   display: grid;
+    grid-template-areas: "input"
+        "image"
+        "submit"
+        
+}
+
+#imgContainer{
+    background-color: white;
 }
 
 .Container p{
     display: block;
     align-content: center;
     margin: auto;
+    
 }
 .Container input{
     display: block;
