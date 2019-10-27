@@ -1,3 +1,46 @@
 body{
+     background-image: url("Media/mickey.jpg");
+    background-repeat: no-repeat;
+}
+
+body img{
+    display: block;
+    align-items: center;
+    margin: auto;
+}
+input{
+    color: darkmagenta;
+    
+}
+.Container{
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.Container p{
+    display: block;
+    align-content: center;
+    margin: auto;
+}
+.Container input{
+    display: block;
+    align-items: center;
+    margin: auto;
+    
+}
+.Container img{
+    display: block;
+    align-items: center;
+    margin: auto;
+}
+
+input{
+   width: 50vh;
+    height: 10vh;
+      border-image-source: linear-gradient(rgba(70, 100, 102, 0.5), rgba(128, 120, 120, 0.5));
+  border-width: 5pt;
+  border-image-slice: 1;
     
 }
